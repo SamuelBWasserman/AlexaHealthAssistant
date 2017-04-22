@@ -1,10 +1,11 @@
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import urllib2
+
 
 def scrape():
     current_site = 'https://www.bodybuilding.com/category/training'
     try:
-        url = urllib2.urlopen(current_site).read()
+        url = urlopen(current_site).read()
     except:
         return
     article_dict = dict()
