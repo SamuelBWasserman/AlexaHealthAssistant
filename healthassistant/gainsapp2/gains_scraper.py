@@ -1,26 +1,10 @@
 from urllib.request import urlopen
-from bs4 import BeautifulSoup
-<<<<<<< HEAD
 
-
-def scrape():
-    current_site = 'https://www.bodybuilding.com/category/training'
-    try:
-        url = urlopen(current_site).read()
-    except:
-        return
-    article_dict = dict()
-    article_info = []
-    soup = BeautifulSoup(url, 'html.parser')
-    article_titles = soup.findAll('span',{'class':'title'})
-    for tag in article_titles:
-        article_info.append(tag.string)
-        link = tag.find('a')
-=======
 import urllib2
 import scrapy
 from pymongo import MongoClient
 
+>>>>>>> origin/master
 class GainsSpider(scrapy.Spider):
     name = 'gainsspider'
     start_urls = ['https://www.bodybuilding.com/category/training']
@@ -29,7 +13,6 @@ class GainsSpider(scrapy.Spider):
         client = MongoClient()
         db = client.test
         current_site = 'https://www.bodybuilding.com/category/training'
->>>>>>> origin/master
         try:
             url = urllib2.urlopen(current_site).read()
         except:
