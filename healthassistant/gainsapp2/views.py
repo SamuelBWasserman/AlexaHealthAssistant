@@ -1,7 +1,5 @@
-from django.shortcuts import render
-import gains_scrapper
+from django.http import HttpResponse
 
-# Create your views here.
-def scrapper():
-    
-    return
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
